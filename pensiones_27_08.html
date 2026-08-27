@@ -10,33 +10,42 @@
      #FFB8B8 #DB2645 #E83445 #FF9022 #FF9D33 #FFA300 #F7C148 #FFDE08 #F9DB43
      #F3DA4D #FFE76E #E8E37E #FFF2BB #C2CF49 #509579 #4511A8 #917D71 #29606D
      #EBD3B0 — directamente o mezclados entre sí con color-mix() para tintes
-     y sombras. El fondo (#EBD3B0) es el beige/arena del mapa, el acento
-     principal (#4511A8) es el morado vibrante y el acento fuerte (#96295B)
-     es el magenta oscuro. Blanco y el #1A1A1A de la marca se usan como
-     neutros funcionales (texto, tarjetas, chip del logo). */
+     y sombras. El fondo (#FFA300) es el mostaza/naranja saturado del mapa,
+     usado como "papel de fondo" detrás de todo el sitio (visible en los
+     márgenes y en la barra superior). El contenido vive encima de --paper,
+     un tinte casi blanco derivado del propio fondo (14% #FFA300 sobre
+     blanco) para que el cuerpo del texto conserve el mismo contraste ya
+     auditado, como si fuera una hoja clara flotando sobre el color. El
+     acento principal (#4511A8) es el morado vibrante y el acento fuerte
+     (#29606D, usado en enlaces y énfasis) es el verde azulado del mapa.
+     Los colores de estado y los títulos de cada sección se oscurecen con
+     color-mix() sobre su propio tono para garantizar contraste legible
+     tanto sobre blanco como sobre --paper. Blanco y el #1A1A1A de la marca
+     se usan como neutros funcionales (texto, tarjetas, chip del logo). */
   :root {
     --brand-ink: #2d1554;
 
-    --bg: #ebd3b0;
+    --bg: #ffa300;
+    --paper: color-mix(in srgb, #ffa300 14%, #ffffff 86%);
     --surface: #ffffff;
-    --surface-2: color-mix(in srgb, #ebd3b0 45%, #ffffff 55%);
+    --surface-2: color-mix(in srgb, #ffa300 45%, #ffffff 55%);
     --text: #1a1a1a;
-    --text-muted: #1a1a1a;
-    --rule: color-mix(in srgb, #917d71 30%, #ebd3b0 70%);
+    --text-muted: color-mix(in srgb, #917d71 65%, #1a1a1a 35%);
+    --rule: color-mix(in srgb, #917d71 30%, #ffa300 70%);
     --accent: #4511a8;
-    --accent-strong: #1a1a1a;
+    --accent-strong: #29606d;
     --accent-soft: color-mix(in srgb, #4511a8 14%, #ffffff 86%);
     --accent2: #509579;
     --accent2-strong: color-mix(in srgb, #509579 78%, #1a1a1a 22%);
-    --rail: color-mix(in srgb, #917d71 25%, #ebd3b0 75%);
+    --rail: color-mix(in srgb, #917d71 25%, #ffa300 75%);
 
-    --st-avance-fg: color-mix(in srgb, #509579 85%, #1a1a1a 15%);
+    --st-avance-fg: color-mix(in srgb, #509579 60%, #1a1a1a 40%);
     --st-avance-bg: color-mix(in srgb, #509579 14%, #ffffff 86%);
-    --st-riesgo-fg: color-mix(in srgb, #ff9022 60%, #1a1a1a 40%);
+    --st-riesgo-fg: color-mix(in srgb, #ff9022 45%, #1a1a1a 55%);
     --st-riesgo-bg: color-mix(in srgb, #ff9022 16%, #ffffff 84%);
-    --st-suspend-fg: color-mix(in srgb, #e83445 75%, #1a1a1a 25%);
+    --st-suspend-fg: color-mix(in srgb, #e83445 70%, #1a1a1a 30%);
     --st-suspend-bg: color-mix(in srgb, #e83445 12%, #ffffff 88%);
-    --st-info-fg: color-mix(in srgb, #4287ba 90%, #1a1a1a 10%);
+    --st-info-fg: color-mix(in srgb, #4287ba 60%, #1a1a1a 40%);
     --st-info-bg: color-mix(in srgb, #4287ba 12%, #ffffff 88%);
 
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 14px 34px -14px rgba(0, 0, 0, 0.4);
@@ -44,26 +53,27 @@
 
   @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
-      --bg: #ebd3b0;
+      --bg: #ffa300;
+      --paper: color-mix(in srgb, #ffa300 14%, #ffffff 86%);
       --surface: #ffffff;
-      --surface-2: color-mix(in srgb, #ebd3b0 45%, #ffffff 55%);
+      --surface-2: color-mix(in srgb, #ffa300 45%, #ffffff 55%);
       --text: #1a1a1a;
-      --text-muted: #1a1a1a;
-      --rule: color-mix(in srgb, #917d71 30%, #ebd3b0 70%);
+      --text-muted: color-mix(in srgb, #917d71 65%, #1a1a1a 35%);
+      --rule: color-mix(in srgb, #917d71 30%, #ffa300 70%);
       --accent: #4511a8;
-      --accent-strong: #1a1a1a;
+      --accent-strong: #29606d;
       --accent-soft: color-mix(in srgb, #4511a8 14%, #ffffff 86%);
       --accent2: #509579;
       --accent2-strong: color-mix(in srgb, #509579 78%, #1a1a1a 22%);
-      --rail: color-mix(in srgb, #917d71 25%, #ebd3b0 75%);
+      --rail: color-mix(in srgb, #917d71 25%, #ffa300 75%);
 
-      --st-avance-fg: color-mix(in srgb, #509579 85%, #1a1a1a 15%);
+      --st-avance-fg: color-mix(in srgb, #509579 60%, #1a1a1a 40%);
       --st-avance-bg: color-mix(in srgb, #509579 14%, #ffffff 86%);
-      --st-riesgo-fg: color-mix(in srgb, #ff9022 60%, #1a1a1a 40%);
+      --st-riesgo-fg: color-mix(in srgb, #ff9022 45%, #1a1a1a 55%);
       --st-riesgo-bg: color-mix(in srgb, #ff9022 16%, #ffffff 84%);
-      --st-suspend-fg: color-mix(in srgb, #e83445 75%, #1a1a1a 25%);
+      --st-suspend-fg: color-mix(in srgb, #e83445 70%, #1a1a1a 30%);
       --st-suspend-bg: color-mix(in srgb, #e83445 12%, #ffffff 88%);
-      --st-info-fg: color-mix(in srgb, #4287ba 90%, #1a1a1a 10%);
+      --st-info-fg: color-mix(in srgb, #4287ba 60%, #1a1a1a 40%);
       --st-info-bg: color-mix(in srgb, #4287ba 12%, #ffffff 88%);
 
       --shadow: 0 1px 2px rgba(20, 18, 10, 0.08), 0 10px 26px -14px rgba(20, 18, 10, 0.2);
@@ -71,26 +81,27 @@
   }
 
   :root[data-theme="light"] {
-    --bg: #ebd3b0;
+    --bg: #ffa300;
+    --paper: color-mix(in srgb, #ffa300 14%, #ffffff 86%);
     --surface: #ffffff;
-    --surface-2: color-mix(in srgb, #ebd3b0 45%, #ffffff 55%);
+    --surface-2: color-mix(in srgb, #ffa300 45%, #ffffff 55%);
     --text: #1a1a1a;
-    --text-muted: #1a1a1a;
-    --rule: color-mix(in srgb, #917d71 30%, #ebd3b0 70%);
+    --text-muted: color-mix(in srgb, #917d71 65%, #1a1a1a 35%);
+    --rule: color-mix(in srgb, #917d71 30%, #ffa300 70%);
     --accent: #4511a8;
-    --accent-strong: #1a1a1a;
+    --accent-strong: #29606d;
     --accent-soft: color-mix(in srgb, #4511a8 14%, #ffffff 86%);
     --accent2: #509579;
     --accent2-strong: color-mix(in srgb, #509579 78%, #1a1a1a 22%);
-    --rail: color-mix(in srgb, #917d71 25%, #ebd3b0 75%);
+    --rail: color-mix(in srgb, #917d71 25%, #ffa300 75%);
 
-    --st-avance-fg: color-mix(in srgb, #509579 85%, #1a1a1a 15%);
+    --st-avance-fg: color-mix(in srgb, #509579 60%, #1a1a1a 40%);
     --st-avance-bg: color-mix(in srgb, #509579 14%, #ffffff 86%);
-    --st-riesgo-fg: color-mix(in srgb, #ff9022 60%, #1a1a1a 40%);
+    --st-riesgo-fg: color-mix(in srgb, #ff9022 45%, #1a1a1a 55%);
     --st-riesgo-bg: color-mix(in srgb, #ff9022 16%, #ffffff 84%);
-    --st-suspend-fg: color-mix(in srgb, #e83445 75%, #1a1a1a 25%);
+    --st-suspend-fg: color-mix(in srgb, #e83445 70%, #1a1a1a 30%);
     --st-suspend-bg: color-mix(in srgb, #e83445 12%, #ffffff 88%);
-    --st-info-fg: color-mix(in srgb, #4287ba 90%, #1a1a1a 10%);
+    --st-info-fg: color-mix(in srgb, #4287ba 60%, #1a1a1a 40%);
     --st-info-bg: color-mix(in srgb, #4287ba 12%, #ffffff 88%);
 
     --shadow: 0 1px 2px rgba(20, 18, 10, 0.08), 0 10px 26px -14px rgba(20, 18, 10, 0.2);
@@ -119,6 +130,17 @@
   }
 
   a { color: var(--accent-strong); }
+
+  /* subrayado tipo "resaltador" para las frases clave, como en el Instagram */
+  mark {
+    background: color-mix(in srgb, #f9db43 62%, transparent);
+    color: var(--text);
+    padding: 0.02em 0.28em;
+    border-radius: 4px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
   a:focus-visible, button:focus-visible, summary:focus-visible {
     outline: 2px solid var(--accent-strong);
     outline-offset: 3px;
@@ -126,8 +148,11 @@
 
   .wrap {
     max-width: 760px;
-    margin: 0 auto;
+    margin: 14px auto 22px;
     padding: 0 24px 96px;
+    background: var(--paper);
+    border-radius: 22px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 20px 44px -18px rgba(0, 0, 0, 0.35);
   }
 
   /* ---------- top bar ---------- */
@@ -169,7 +194,8 @@
   .progress-label {
     font-family: "Nunito", ui-sans-serif, sans-serif;
     font-size: 12px;
-    color: var(--text-muted);
+    font-weight: 700;
+    color: var(--brand-ink);
     white-space: nowrap;
   }
   .progress-track {
@@ -218,6 +244,13 @@
     max-width: 62ch;
     margin: 0 0 22px;
   }
+  /* rayita punteada decorativa, como las líneas de trayecto del mapa/carrusel */
+  .hero-dash {
+    width: 84px;
+    height: 0;
+    border-top: 3px dashed var(--accent2);
+    margin: 0 0 18px;
+  }
   .byline {
     display: flex;
     align-items: center;
@@ -238,11 +271,17 @@
     box-shadow: var(--shadow);
   }
   .banner h2 {
+    display: inline-block;
     font-family: "Baloo 2", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.2rem;
-    margin: 0 0 10px;
-    color: #e54ca0;
+    margin: 0 0 12px;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 7px 16px;
+    border-radius: 6px 16px 6px 16px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+    transform: rotate(-0.6deg);
   }
   .banner p { margin: 0 0 10px; color: var(--text); }
   .banner p:last-child { margin-bottom: 0; }
@@ -256,11 +295,17 @@
     margin: 40px 0 8px;
   }
   .glossary h2 {
+    display: inline-block;
     font-family: "Baloo 2", sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin: 0 0 4px;
-    color: #509579;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 8px 18px;
+    border-radius: 16px 6px 16px 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+    transform: rotate(0.5deg);
   }
   .glossary > p.lede {
     color: var(--text-muted);
@@ -270,6 +315,7 @@
   .g-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 12px;
   }
   @media (max-width: 560px) {
@@ -287,13 +333,33 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: #96295b;
-    margin-bottom: 5px;
+    margin-bottom: 0;
+    cursor: pointer;
+    position: relative;
+    padding-right: 22px;
   }
+  .g-card dt:focus-visible {
+    outline: 2px solid var(--brand-ink);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  .g-card dt::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--brand-ink);
+  }
+  .g-card.is-open dt::after { content: "–"; }
   .g-card dd {
-    margin: 0;
+    display: none;
+    margin: 8px 0 0;
     font-size: 0.92rem;
     color: var(--text-muted);
   }
+  .g-card.is-open dd { display: block; }
   .g-card dd p { margin: 0 0 8px; }
   .g-card dd p:last-child { margin-bottom: 0; }
   .g-card dd strong { color: var(--text); }
@@ -303,11 +369,17 @@
     margin: 48px 0 8px;
   }
   .kit h2 {
+    display: inline-block;
     font-family: "Baloo 2", sans-serif;
-    font-weight: 600;
-    font-size: 1.3rem;
-    margin: 0 0 4px;
-    color: #ff9022;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 7px 16px;
+    border-radius: 6px 16px 6px 16px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+    transform: rotate(-0.5deg);
   }
   .kit > p.lede {
     color: var(--text-muted);
@@ -350,7 +422,7 @@
   }
   .kit-table thead th {
     font-family: "Nunito", sans-serif;
-    font-size: 10.5px;
+    font-size: 11.5px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-muted);
@@ -389,17 +461,23 @@
   .timeline-head {
     margin: 56px 0 6px;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
   }
   .timeline-head h2 {
+    display: inline-block;
     font-family: "Baloo 2", sans-serif;
-    font-weight: 600;
-    font-size: 1.4rem;
+    font-weight: 700;
+    font-size: 1.3rem;
     margin: 0;
-    color: #333a7d;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 7px 16px;
+    border-radius: 16px 6px 16px 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+    transform: rotate(0.6deg);
   }
   .timeline-head .dir {
     font-family: "Nunito", sans-serif;
@@ -466,7 +544,7 @@
   .tag {
     display: inline-block;
     font-family: "Nunito", sans-serif;
-    font-size: 10.5px;
+    font-size: 11.5px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 3px 8px;
@@ -505,7 +583,7 @@
   }
   .art-list span {
     font-family: "Nunito", sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text);
     background: color-mix(in srgb, #513185 14%, var(--surface) 86%);
@@ -543,11 +621,17 @@
     border-top: 1px solid var(--rule);
   }
   .sources h2 {
+    display: inline-block;
     font-family: "Baloo 2", sans-serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    margin: 0 0 12px;
-    color: #d12f7d;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 14px;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 6px 14px;
+    border-radius: 6px 14px 6px 14px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
+    transform: rotate(-0.5deg);
   }
   .sources ol {
     padding-left: 20px;
@@ -573,6 +657,20 @@
     color: var(--text-muted);
   }
   footer.colophon a { color: var(--text-muted); }
+  .ig-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--surface);
+    border: 1.5px solid var(--brand-ink);
+    color: var(--accent-strong) !important;
+    font-weight: 800;
+    font-size: 11.5px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
 
   /* ---------- tooltips (clic para ver qué significa cada etiqueta) ---------- */
   [data-tip] { cursor: pointer; }
@@ -620,6 +718,7 @@
   <section class="hero">
     <p class="eyebrow">Reforma pensional · Colombia</p>
     <h1 class="title">¿Cómo va la <em>reforma pensional</em>?</h1>
+    <div class="hero-dash" aria-hidden="true"></div>
     <p class="dek">Pipol, acá le contamos cómo va la reforma pensional y cuál ha sido el camino que ha recorrido pa' llegar a donde está hoy: quién demandó a quién, qué se cayó y qué no, y qué significa todo eso pa' usted. Arranca con lo más reciente arriba y puede bajar pa' llegar al origen de todo.</p>
     <div class="byline">
       <span>Recopilado por Economía para la Pipol</span>
@@ -630,32 +729,32 @@
 
   <div class="banner">
     <h2>¿En qué va la pensional de Petro?</h2>
-    <p>Esto es tremendo novelón, pero el resumen es que luego de que la reforma pensional de Petro fue aprobada en el Congreso en junio de 2024, la exsenadora Paloma Valencia demandó la reforma ante la Corte Constitucional argumentando que en su último debate en Cámara no se discutió lo suficiente. Esto técnicamente se conoce como vicios de trámite.</p>
-    <p>La Corte le dio la razón y devolvió la pensional a la Cámara en junio de 2025 a ser discutida otra vez, donde fue aprobada nuevamente. Y estábamos a la espera de saber si la Corte ya consideraba que la reforma fue suficientemente discutida para poder comenzar a implementarse.</p>
-    <p>Pero aquí no se acaba esta novela, a la Corte le queda mucho que revisar. Tiene que echarle ojo a la discusión de estos 9 artículos que devolvió a la Cámara, tiene que revisar si el contenido de la reforma está acorde con la Constitución y revisar si admite otras 99 demandas que tiene la reforma pensional.</p>
+    <p>Tras aprobarse la reforma pensional de Petro en junio de 2024, la exsenadora Paloma Valencia la demandó ante la Corte Constitucional, argumentando que no se discutió lo suficiente en el último debate en Cámara.</p>
+    <p>La Corte le dio la razón y devolvió la ley a la Cámara en junio de 2025 para un nuevo debate, donde fue aprobada de nuevo.</p>
+    <p>El 25 de agosto de 2026 la Corte dijo que la mayor parte del problema se solucionó pero dijo que <mark>9 artículos le faltaba debate</mark> y los devolvió a la Cámara a ser discutidos.</p>
   </div>
 
   <section class="glossary">
-    <h2>Antes de bajar, 4 términos clave</h2>
-    <p class="lede">Pa' que la línea de tiempo tenga sentido de una.</p>
+    <h2>Diccionario pipol pa' entender la pensional</h2>
+    <p class="lede">Dele clic a cada término pa' ver qué significa.</p>
     <dl class="g-grid">
       <div class="g-card">
-        <dt>Ventana de oportunidad</dt>
+        <dt role="button" tabindex="0" aria-expanded="false">Ventana de oportunidad</dt>
         <dd>El permiso especial (jul. 2024–jul. 2026) que dio la reforma pensional para que la gente se pudiera cambiar de Colpensiones a fondo privado (o viceversa) a menos de 10 años de pensionarse (mujeres de 47 o más años y hombres de 52 o más años) y si tenía un mínimo de semanas cotizadas (750 semanas o más para mujeres y 900 o más semanas para hombres).</dd>
       </div>
       <div class="g-card">
-        <dt>Colpensiones y fondo privado</dt>
+        <dt role="button" tabindex="0" aria-expanded="false">Colpensiones y fondo privado</dt>
         <dd>
           <p><strong>Colpensiones</strong> es el sistema público para pensionarse. Usted no ahorra, sino que su pensión sale de lo que cotizan los jóvenes del futuro.</p>
           <p><strong>Los fondos privados</strong> (Colfondos, Porvenir, Protección y Skandia) son el sistema privado de pensión en el que su mesada pensional sale de los ahorros que usted hizo durante su vida.</p>
         </dd>
       </div>
       <div class="g-card">
-        <dt>Corte Constitucional</dt>
+        <dt role="button" tabindex="0" aria-expanded="false">Corte Constitucional</dt>
         <dd>Revisa si la reforma se tramitó bien y si es legal (cumple con la Constitución). Puede dejarla igual, ordenar ajustes o tumbarla. Mientras no falle, sigue rigiendo el sistema viejo de pensiones, el de la Ley 100 de 1993.</dd>
       </div>
       <div class="g-card">
-        <dt>Las Accai</dt>
+        <dt role="button" tabindex="0" aria-expanded="false">Las Accai</dt>
         <dd>Son los nuevos fondos privados de pensiones que pasaron a llamarse Administradora del Componente Complementario de Ahorro Individual. Ahora también incluyen fiduciarias, aseguradoras y comisionistas de bolsa. Ojo: todas deben ser autorizadas por la Superfinanciera, y hasta el momento tenemos 5 Accai: Colfondos, Porvenir, Positiva, Protección y Skandia.</dd>
       </div>
     </dl>
@@ -926,7 +1025,10 @@
 
   <footer class="colophon">
     <span>Economía para la Pipol · datos hasta el 27 de agosto de 2026</span>
-    <a href="https://www.economiaparalapipol.com/" target="_blank" rel="noopener">economiaparalapipol.com ↗</a>
+    <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+      <a class="ig-chip" href="https://www.instagram.com/economiaparalapipol/" target="_blank" rel="noopener">@economiaparalapipol</a>
+      <a href="https://www.economiaparalapipol.com/" target="_blank" rel="noopener">economiaparalapipol.com ↗</a>
+    </span>
   </footer>
 
 </div>
@@ -1028,5 +1130,32 @@
 
     window.addEventListener('scroll', closeTip, true);
     window.addEventListener('resize', closeTip);
+  })();
+
+  (function () {
+    function toggleCard(dt) {
+      var card = dt.closest('.g-card');
+      if (!card) return;
+      var willOpen = !card.classList.contains('is-open');
+      document.querySelectorAll('.g-card.is-open').forEach(function (openCard) {
+        if (openCard !== card) {
+          openCard.classList.remove('is-open');
+          var openDt = openCard.querySelector('dt');
+          if (openDt) openDt.setAttribute('aria-expanded', 'false');
+        }
+      });
+      card.classList.toggle('is-open', willOpen);
+      dt.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    }
+
+    document.querySelectorAll('.g-card dt').forEach(function (dt) {
+      dt.addEventListener('click', function () { toggleCard(dt); });
+      dt.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCard(dt);
+        }
+      });
+    });
   })();
 </script>
